@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0f1123;
+}
+
+#plane {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.firefly {
+    position: absolute;
+    animation: flutter 5s infinite alternate ease-in-out;
+}
+
+.glow, .bug {
+    height: 0.5rem;
+    width: 0.5rem;
+    border-radius: 50%;
+    background-color: yellow;
+}
+
+.glow {
+    filter: opacity(50%);
+    animation: glow 5s infinite alternate ease-in-out;
+    z-index: 1;
+}
+
+.bug {
+    height: 0.5rem;
+    width: 0.5rem;
+    border-radius: 50%;
+    animation: bright 5s infinite alternate ease-in-out;
+    z-index: 2;
+    background-color: yellow;
+}
+
+@keyframes flutter {
+    0% {
+        transform: translateX(-100px) translateY(100px);
+    }
+    25% {
+        transform: translateX(100px) translateY(-100px);
+    }
+    50% {
+        transform: translateX(100px) translateY(100px);
+    }
+    75% {
+        transform: translateX(-100px) translateY(-100px);
+    }
+    100% {
+        transform: translateX(-100px) translateY(100px);
+    }
+}
+
+@keyframes glow {
+    100% {
+        transform: scale(3);
+    }
+}
+
+@keyframes bright {
+    100% {
+        filter: brightness(200%);
+    }
+}
