@@ -8,19 +8,34 @@ body {
     background: #0f1123;
 }
 
+/* CONTAINER */
+
 #plane {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
+/*  */
+
 .firefly {
-    position: absolute;
-    animation: flutter 5s infinite alternate ease-in-out;
+    width: 150px;
+    height: 150px;
+
+    transform-origin: top center; 
+    animation: flutter 3s linear reverse infinite; 
 }
 
 .glow, .bug {
+    position: absolute;
     height: 0.5rem;
     width: 0.5rem;
     border-radius: 50%;
@@ -30,7 +45,6 @@ body {
 .glow {
     filter: opacity(50%);
     animation: glow 5s infinite alternate ease-in-out;
-    z-index: 1;
 }
 
 .bug {
@@ -38,31 +52,23 @@ body {
     width: 0.5rem;
     border-radius: 50%;
     animation: bright 5s infinite alternate ease-in-out;
-    z-index: 2;
     background-color: yellow;
 }
 
+/* ANIMATIONS */
+
 @keyframes flutter {
-    0% {
-        transform: translateX(-100px) translateY(100px);
-    }
-    25% {
-        transform: translateX(100px) translateY(-100px);
-    }
     50% {
-        transform: translateX(100px) translateY(100px);
-    }
-    75% {
-        transform: translateX(-100px) translateY(-100px);
+        transform: rotate(-180deg);
     }
     100% {
-        transform: translateX(-100px) translateY(100px);
+        transform: rotate(-360deg);
     }
-}
+} 
 
 @keyframes glow {
     100% {
-        transform: scale(3);
+        transform: scale(2);
     }
 }
 
